@@ -28,3 +28,18 @@ var Slider = {
 
 Slider.prevBtn.addEventListener('click', Slider.prevSlide);
 Slider.nextBtn.addEventListener('click', Slider.nextSlide);
+
+
+var elem = document.getElementById("main");
+
+function openFullscreen() {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { 
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { 
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { 
+      elem.msRequestFullscreen();
+    }
+  }
