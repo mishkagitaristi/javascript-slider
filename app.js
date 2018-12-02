@@ -22,19 +22,9 @@ var Slider = {
         }else {
             Slider.itemIndex--;
         }
-        Slider.items[Slider.itemIndex].classList.add("slider__item--active");
-        
+        Slider.items[Slider.itemIndex].classList.add("slider__item--active");   
     }
-
 }
 
 Slider.prevBtn.addEventListener('click', Slider.prevSlide);
 Slider.nextBtn.addEventListener('click', Slider.nextSlide);
-
-
-
-
-
-
-
-
