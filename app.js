@@ -6,22 +6,23 @@ var Slider = {
     nextBtn : document.getElementById('next-btn'),
 
     nextSlide: function (){
+        Slider.items[Slider.itemIndex].classList.remove("slider__item--active");
         if (Slider.itemIndex == Slider.items.length-1){
             Slider.itemIndex = 0;
         }else {
             Slider.itemIndex++;
         }
-        console.log(Slider.itemIndex);
-        
+        Slider.items[Slider.itemIndex].classList.add("slider__item--active");
     },
 
     prevSlide: function() {
+        Slider.items[Slider.itemIndex].classList.remove("slider__item--active");
         if (Slider.itemIndex == 0){
             Slider.itemIndex = Slider.items.length-1;
         }else {
             Slider.itemIndex--;
         }
-        console.log(Slider.itemIndex);
+        Slider.items[Slider.itemIndex].classList.add("slider__item--active");
         
     }
 
