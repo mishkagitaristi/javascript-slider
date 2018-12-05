@@ -5,7 +5,8 @@ var Slider = {
     prevBtn : document.getElementById("prev-btn"),
     nextBtn : document.getElementById('next-btn'),
 
-    nextSlide: function (){
+    nextSlide: function (e){
+        
         Slider.items[Slider.itemIndex].classList.remove("slider__item--active");
         if (Slider.itemIndex == Slider.items.length-1){
             Slider.itemIndex = 0;
@@ -13,6 +14,7 @@ var Slider = {
             Slider.itemIndex++;
         }
         Slider.items[Slider.itemIndex].classList.add("slider__item--active");
+    
     },
 
     prevSlide: function() {
@@ -23,11 +25,26 @@ var Slider = {
             Slider.itemIndex--;
         }
         Slider.items[Slider.itemIndex].classList.add("slider__item--active");   
+    },
+    keyboard: function(event){
+        var key = event.keyCode;
+        switch(key){
+            case 37:
+                Slider.prevSlide();
+                break;
+            case 39: 
+                Slider.nextSlide();
+
+        }
     }
+
 }
 
 Slider.prevBtn.addEventListener('click', Slider.prevSlide);
 Slider.nextBtn.addEventListener('click', Slider.nextSlide);
+
+document.addEventListener('keydown', Slider.keyboard);
+
 
 
 var elem = document.getElementById("main");
@@ -43,4 +60,3 @@ function openFullscreen() {
       elem.msRequestFullscreen();
     }
   }
-
